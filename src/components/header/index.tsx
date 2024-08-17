@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import "../../style.scss/App.scss"
+import Logo from "../../assets//Без названия.jpeg"
 const Header: React.FC = () => {
   return (
-    <header>
-      <h1>Биздин Ресторан</h1>
+    <div className='header'>
       <nav>
+        <img src={Logo} alt="logo" />
         <ul>
           <li><Link to="/">Башкы бет</Link></li>
           <li><Link to="/menu">Меню</Link></li>
@@ -13,7 +14,7 @@ const Header: React.FC = () => {
           <li><Link to="/contact">Байланыш</Link></li>
         </ul>
       </nav>
-    </header>
+    </div>
   );
 };
 

@@ -2,7 +2,7 @@ import Logo from '../../assets//Без названия.jpeg'
 const Home = () => {
 	
 	return (
-		<div>
+		<div className="home">
 			<p>Home</p>
 			<img src={Logo} alt="" />
 		</div>

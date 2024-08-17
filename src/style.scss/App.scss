@@ -1,0 +1,41 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+.header{
+height: 150px;
+	background-color: #7ac637;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+	nav{
+		img{
+			width: 150px;
+			height: 150px;
+			margin-left: 20px;
+			margin-right: 20px;	
+border-radius: 15px;
+
+		}
+		margin: 0 20px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 80px;
+		ul{
+			font-size: 20px;
+			display: flex;
+			gap: 90px;
+			align-items: center;
+			list-style: none;
+			a{
+				text-decoration: none;
+				color: #fff;
+			}
+		}
+	}
+}
