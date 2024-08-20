@@ -1,10 +1,10 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { removeItem } from '../menuSlice';
-import AddMenuItem from './AddMenuItem';
 
 const Menu = () => {
   const menuItems = useSelector((state) => state.menu.items);
   const dispatch = useDispatch();
+console.log(menuItems);
 
   return (
     <div>
@@ -13,11 +13,12 @@ const Menu = () => {
         {menuItems.map((item) => (
           <li key={item.id}>
             {item.name} - ${item.price.toFixed(2)}
+            <img src={item.image} alt=""/>
+
             <button onClick={() => dispatch(removeItem(item.id))}>Өчүрүү</button>
           </li>
         ))}
       </ul>
-      <AddMenuItem />
     </div>
   );
 };

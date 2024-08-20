@@ -5,18 +5,22 @@ import { addItem } from '../menuSlice';
 const AddMenuItem = () => {
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
+  const [image, setImage] = useState(null);
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name && price) {
+    if (name && price&& image) {
       dispatch(addItem({
         id: Date.now(), // Жөнөкөй ID генерациясы
         name,
-        price: parseFloat(price)
+        price: parseFloat(price),
+        image: image
+      
       }));
       setName('');
       setPrice('');
+      setImage('');
     }
   };
 
@@ -39,9 +43,13 @@ const AddMenuItem = () => {
           type="number" 
           id="price"
           value={price}
+
           onChange={(e) => setPrice(e.target.value)}
           step="0.01"
           required
+        />
+        <input type="file" 
+        onChange={(e) => setImage(e.target.files[0])}
         />
       </div>
       <button type="submit">Кошуу</button>
